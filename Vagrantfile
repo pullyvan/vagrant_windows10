@@ -5,6 +5,8 @@ Vagrant.configure("2") do |config|
   config.vm.define "windows10" do |windows10|
     config.vm.box = "gusztavvargadr/windows-10"
     windows10.vm.hostname = 'windows10'
+    config.vm.network "public_network", type: "dhcp", :bridge => 'en0: Wi-Fi (Wireless)',
+    use_dhcp_assigned_default_route: true
     windows10.vm.synced_folder "./share", "/home/vagrant/share", create: true
     #kubmaster.vm.provision "ansible" do |ansible|
     #  ansible.playbook = "playbook.yml"
