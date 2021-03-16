@@ -1,0 +1,9 @@
+---
+# tasks file for ansible_windows
+- hosts: all
+
+  tasks:
+          # Basics role
+
+          - include_role:
+                    name: roles/basics

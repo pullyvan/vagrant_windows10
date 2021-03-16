@@ -1,8 +1,0 @@
----
-- name: This is the main playbook
-  hosts: all
-  tasks:
-    - name: Install openssh on Windows
-      include_role:
-        name: openssh
-

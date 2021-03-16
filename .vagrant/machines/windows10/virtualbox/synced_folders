@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/share":{"create":true,"guestpath":"/home/vagrant/share","hostpath":"/Users/pullyvankrishnamoorthy/Desktop/projet/vagrant/windows10/share","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/pullyvankrishnamoorthy/Desktop/projet/vagrant/windows10","disabled":false,"__vagrantfile":true}}}

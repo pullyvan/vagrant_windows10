@@ -5,16 +5,15 @@ Vagrant.configure("2") do |config|
   config.vm.define "windows10" do |windows10|
     config.vm.box = "gusztavvargadr/windows-10"
     windows10.vm.hostname = 'windows10'
-    config.vm.network "public_network", type: "dhcp", :bridge => 'en0: Wi-Fi (Wireless)',
-    use_dhcp_assigned_default_route: true
+    config.vm.network "private_network", ip: "172.28.128.110"
+    #config.vm.network "private_network", :type => 'dhcp', ip: "172.28.128.3"
     windows10.vm.synced_folder "./share", "/home/vagrant/share", create: true
-    #kubmaster.vm.provision "ansible" do |ansible|
+    #windows10.vm.provision "ansible" do |ansible|
     #  ansible.playbook = "playbook.yml"
     #end
 
-    windows10.vm.network :private_network, ip: "192.168.56.101"
+#    windows10.vm.network :private_network, ip: "192.168.56.101"
     windows10.vm.provider :virtualbox do |v|
-      v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
       v.customize ["modifyvm", :id, "--memory", 2048]
       v.customize ["modifyvm", :id, "--name", "windows10"]
       v.customize ["modifyvm", :id, "--cpus", "2"]
